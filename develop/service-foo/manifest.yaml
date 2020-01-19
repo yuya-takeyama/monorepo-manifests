@@ -31,5 +31,5 @@ spec:
         app: service-foo
     spec:
       containers:
-      - image: yuyat/service-foo:develop.edd6265ace3e6c9910bf4e7c834f4f6bb9769593
+      - image: yuyat/service-foo:develop.72d3cb57852b30c469618534779311a3257b1b0a
         name: service-foo
