@@ -31,5 +31,5 @@ spec:
         app: service-bar
     spec:
       containers:
-      - image: yuyat/service-bar:develop.72d3cb57852b30c469618534779311a3257b1b0a
+      - image: yuyat/service-bar:develop.61c65dd9e284285396774c65eed9b99563909f7c
         name: service-bar
