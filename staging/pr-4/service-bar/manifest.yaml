@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-bar
+  name: service-bar
+spec:
+  ports:
+  - name: 80-8080
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: service-bar
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service-bar
+  name: service-bar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-bar
+  template:
+    metadata:
+      labels:
+        app: service-bar
+    spec:
+      containers:
+      - image: yuyat/service-bar:pr-4.0124f298a38092a29c3490703236f31876c25f31
+        name: service-bar
