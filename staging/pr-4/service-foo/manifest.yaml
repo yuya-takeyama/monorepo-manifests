@@ -41,5 +41,5 @@ spec:
       - envFrom:
         - configMapRef:
             name: service-foo-config-9m86h6cddd
-        image: yuyat/service-foo:pr-4.0124f298a38092a29c3490703236f31876c25f31
+        image: yuyat/service-foo:pr-4.832b78d0aeff65d7ddd6e8fd86e40cef48d4eb52
         name: service-foo
