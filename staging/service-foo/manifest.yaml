@@ -1,0 +1,45 @@
+apiVersion: v1
+data:
+  NAMESPACE: pr-4
+kind: ConfigMap
+metadata:
+  name: service-foo-config-9m86h6cddd
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-foo
+  name: service-foo
+spec:
+  ports:
+  - name: 80-4567
+    port: 80
+    protocol: TCP
+    targetPort: 4567
+  selector:
+    app: service-foo
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service-foo
+  name: service-foo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-foo
+  template:
+    metadata:
+      labels:
+        app: service-foo
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: service-foo-config-9m86h6cddd
+        image: yuyat/service-foo:pr-4.02acf6ab638cde10ce3d75bdb92168265a3a69b9
+        name: service-foo
