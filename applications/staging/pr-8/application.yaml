@@ -1,19 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging
+  name: pr-8
   namespace: argocd
 spec:
   destination:
+    namespace: pr-8
     server: https://kubernetes.default.svc
   project: default
   source:
     directory:
       recurse: true
-    path: applications/staging
+    path: staging/pr-8
     repoURL: https://github.com/yuya-takeyama/gitops-repo.git
     targetRevision: master
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
