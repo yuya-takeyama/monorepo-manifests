@@ -10,7 +10,7 @@ spec:
   source:
     directory:
       recurse: true
-    path: application/staging
+    path: applications/staging
     repoURL: https://github.com/yuya-takeyama/gitops-repo.git
     targetRevision: master
   syncPolicy:
