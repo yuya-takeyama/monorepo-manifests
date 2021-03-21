@@ -31,5 +31,5 @@ spec:
         app: service-bar
     spec:
       containers:
-      - image: ghcr.io/yuya-takeyama/monorepo/service-bar:pr-8.6c074d2bc5d36dc63d5c218ab2f3911d71743c97
+      - image: ghcr.io/yuya-takeyama/monorepo/service-bar:pr-8.4386b8bbfd15c691573d1fd22e42f1d6bfb162f9
         name: service-bar
