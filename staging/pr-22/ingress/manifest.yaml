@@ -9,7 +9,7 @@ spec:
       - backend:
           serviceName: service-foo
           servicePort: 80
-        path: /foo
+        path: /
       - backend:
           serviceName: service-bar
           servicePort: 80
