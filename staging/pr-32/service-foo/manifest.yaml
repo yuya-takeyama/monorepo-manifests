@@ -31,5 +31,5 @@ spec:
         app: service-foo
     spec:
       containers:
-      - image: ghcr.io/yuya-takeyama/monorepo/service-foo:pr-32.2958e08a0227492ab103f04be196e7475bffdbd6
+      - image: ghcr.io/yuya-takeyama/monorepo/service-foo:pr-32.fb586f892dd6b05eb31ef6511b4cfb35e4460764
         name: service-foo
