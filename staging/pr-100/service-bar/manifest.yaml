@@ -1,0 +1,45 @@
+apiVersion: v1
+data:
+  GITHUB_SHA: 86c8391d15fec32ac510c34c07d67651f15afc34
+  NAMESPACE: pr-100
+  OVERLAY: staging
+  SERVICE_NAME: service-bar
+kind: ConfigMap
+metadata:
+  name: service-bar-metadata-d49tt4c992
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-bar
+  name: service-bar
+spec:
+  ports:
+  - name: 80-8080
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: service-bar
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service-bar
+  name: service-bar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-bar
+  template:
+    metadata:
+      labels:
+        app: service-bar
+    spec:
+      containers:
+      - image: ghcr.io/yuya-takeyama/monorepo/service-bar:pr-100.86c8391d15fec32ac510c34c07d67651f15afc34
+        name: service-bar
