@@ -1,0 +1,30 @@
+apiVersion: v1
+data:
+  GITHUB_SHA: 6715e3d9f2573de2d8ca0d5d23b9047fab957a68
+  NAMESPACE: pr-96
+  OVERLAY: staging
+  SERVICE_NAME: ingress
+kind: ConfigMap
+metadata:
+  name: ingress-metadata-gf7gm76k67
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 80
+        path: /
+      - backend:
+          serviceName: service-foo
+          servicePort: 80
+        path: /foo
+      - backend:
+          serviceName: service-bar
+          servicePort: 80
+        path: /bar
