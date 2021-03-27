@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 82bd5ca98a7f46fa97661be42aa3b5769f01c43b
+  GITHUB_SHA: 1ddc35eb4cec236cba1023520048ecb73035ec19
   NAMESPACE: pr-33
   OVERLAY: staging
   SERVICE_NAME: ingress
 kind: ConfigMap
 metadata:
-  name: ingress-metadata-48tcdk94m8
+  name: ingress-metadata-d5f9khd768
 ---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
