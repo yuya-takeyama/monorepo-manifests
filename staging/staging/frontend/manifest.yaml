@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: d70acb6c0bc0821e9f90f00da2bdb76feef875be
+  GITHUB_SHA: 2217429b61f720e4c42dab978f32fe154c2bf20e
   NAMESPACE: staging
   OVERLAY: staging
   SERVICE_NAME: frontend
 kind: ConfigMap
 metadata:
-  name: frontend-metadata-gbftb6897b
+  name: frontend-metadata-m7fg4598df
 ---
 apiVersion: v1
 kind: Service
