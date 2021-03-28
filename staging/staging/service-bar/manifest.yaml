@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: d70acb6c0bc0821e9f90f00da2bdb76feef875be
+  GITHUB_SHA: 2217429b61f720e4c42dab978f32fe154c2bf20e
   NAMESPACE: staging
   OVERLAY: staging
   SERVICE_NAME: service-bar
 kind: ConfigMap
 metadata:
-  name: service-bar-metadata-2t7k4kc2mf
+  name: service-bar-metadata-kd92chh7cm
 ---
 apiVersion: v1
 kind: Service
