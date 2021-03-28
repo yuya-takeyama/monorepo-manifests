@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 97e0fa92578d11f448e68747078b462c1144ec81
+  GITHUB_SHA: e6c74a1a928215668f89bf7e6f14d87f5d6e23f0
   NAMESPACE: pr-103
   OVERLAY: staging
   SERVICE_NAME: ingress
 kind: ConfigMap
 metadata:
-  name: ingress-metadata-2ftt6kgc7f
+  name: ingress-metadata-7452bh5825
 ---
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
@@ -30,4 +30,4 @@ spec:
     - name: frontend
       port: 80
   virtualhost:
-    fqdn: ${NAMESPACE}.gke.yuyat.jp
+    fqdn: .gke.yuyat.jp
