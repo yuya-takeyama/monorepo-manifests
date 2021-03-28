@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 72e8c3a227845ab262c02f0383a4936699efebb0
+  GITHUB_SHA: 8c259ef101c3cf464e77de6e9634409728c4f92d
   NAMESPACE: pr-103
   OVERLAY: staging
   SERVICE_NAME: service-foo
 kind: ConfigMap
 metadata:
-  name: service-foo-metadata-bgchmbtfbb
+  name: service-foo-metadata-t8btdfmgcg
 ---
 apiVersion: v1
 kind: Service
@@ -43,6 +43,6 @@ spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: service-foo-metadata-bgchmbtfbb
+            name: service-foo-metadata-t8btdfmgcg
         image: service-foo
         name: service-foo
