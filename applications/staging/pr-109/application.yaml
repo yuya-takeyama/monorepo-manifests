@@ -1,21 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging
+  name: pr-109
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
+    namespace: pr-109
     server: https://kubernetes.default.svc
   project: default
   source:
     directory:
       recurse: true
-    path: applications/staging
+    path: staging/pr-109
     repoURL: https://github.com/yuya-takeyama/monorepo-manifests.git
     targetRevision: master
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
