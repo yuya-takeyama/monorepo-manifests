@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 74cd7d3b65fdcc43a2c8d75430ea99629c660c80
+  GITHUB_SHA: eb118d9e2d4de9f291fafb962e5005cb5071f8e8
   NAMESPACE: pr-110
   OVERLAY: staging
   SERVICE_NAME: frontend
 kind: ConfigMap
 metadata:
-  name: frontend-metadata-fkt7h7c2gm
+  name: frontend-metadata-fgb576d9tc
 ---
 apiVersion: v1
 kind: Service
@@ -41,5 +41,5 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: ghcr.io/yuya-takeyama/monorepo/frontend:pr-110.74cd7d3b65fdcc43a2c8d75430ea99629c660c80
+      - image: ghcr.io/yuya-takeyama/monorepo/frontend:pr-110.eb118d9e2d4de9f291fafb962e5005cb5071f8e8
         name: frontend
