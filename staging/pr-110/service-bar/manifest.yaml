@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 51ca328d582b789b9f40a075b6b220186e26f245
+  GITHUB_SHA: ab604c2d391750e9f3178460e131118d8700c3b0
   NAMESPACE: pr-110
   OVERLAY: staging
   SERVICE_NAME: service-bar
 kind: ConfigMap
 metadata:
-  name: service-bar-metadata-d6bf27267c
+  name: service-bar-metadata-k75k25598c
 ---
 apiVersion: v1
 kind: Service
@@ -41,5 +41,5 @@ spec:
         app: service-bar
     spec:
       containers:
-      - image: ghcr.io/yuya-takeyama/monorepo/service-bar:pr-110.51ca328d582b789b9f40a075b6b220186e26f245
+      - image: ghcr.io/yuya-takeyama/monorepo/service-bar:pr-110.ab604c2d391750e9f3178460e131118d8700c3b0
         name: service-bar
