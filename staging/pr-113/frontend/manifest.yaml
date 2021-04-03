@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: ccdf696c11b49417aacb75c123442bcfea0e26c6
+  GITHUB_SHA: 121ca55da12fc792bb6021db1587c165f40b7bc4
   NAMESPACE: pr-113
   OVERLAY: staging
   SERVICE_NAME: frontend
 kind: ConfigMap
 metadata:
-  name: frontend-metadata-cbk25bdtk5
+  name: frontend-metadata-48fc5d5m5h
 ---
 apiVersion: v1
 kind: Service
@@ -41,5 +41,5 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/frontend:pr-113.ccdf696c11b49417aacb75c123442bcfea0e26c6
+      - image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/frontend:pr-113.121ca55da12fc792bb6021db1587c165f40b7bc4
         name: frontend
