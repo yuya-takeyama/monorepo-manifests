@@ -1,0 +1,45 @@
+apiVersion: v1
+data:
+  GITHUB_SHA: 6295c1e5015e34b178c64961a5e8c1562311f70d
+  NAMESPACE: pr-118
+  OVERLAY: staging
+  SERVICE_NAME: service-bar
+kind: ConfigMap
+metadata:
+  name: service-bar-metadata-2k5fbd2g5g
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-bar
+  name: service-bar
+spec:
+  ports:
+  - name: 80-8080
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: service-bar
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service-bar
+  name: service-bar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-bar
+  template:
+    metadata:
+      labels:
+        app: service-bar
+    spec:
+      containers:
+      - image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-bar:pr-118.6295c1e5015e34b178c64961a5e8c1562311f70d
+        name: service-bar
