@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 6295c1e5015e34b178c64961a5e8c1562311f70d
+  GITHUB_SHA: 0d2ad8cc9315c32690e0c203e00829663100513e
   NAMESPACE: pr-118
   OVERLAY: staging
   SERVICE_NAME: ingress
 kind: ConfigMap
 metadata:
-  name: ingress-metadata-6fmb2dgmg5
+  name: ingress-metadata-t7kg267655
 ---
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
