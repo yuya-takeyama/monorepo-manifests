@@ -1,0 +1,37 @@
+apiVersion: v1
+data:
+  GITHUB_SHA: 3f222e365d445824bcc20f7c1f63e60146d96488
+  NAMESPACE: pr-138
+  OVERLAY: staging
+  SERVICE_NAME: ingress
+kind: ConfigMap
+metadata:
+  name: ingress-metadata-79mt542bd6
+---
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: ingress
+spec:
+  routes:
+  - conditions:
+    - prefix: /foo
+    services:
+    - name: service-foo
+      port: 80
+  - conditions:
+    - prefix: /bar
+    services:
+    - name: service-bar
+      port: 80
+  - conditions:
+    - prefix: /
+    requestHeadersPolicy:
+      set:
+      - name: Host
+        value: frontend
+    services:
+    - name: frontend
+      port: 80
+  virtualhost:
+    fqdn: pr-138.gke.yuyat.jp
