@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 795889246204e064140418aa9b39050a8bcf9c45
+  GITHUB_SHA: 894f8810d3da91317dfca27feaac3855bc212924
   NAMESPACE: develop
   OVERLAY: develop
   SERVICE_NAME: service-foo
 kind: ConfigMap
 metadata:
-  name: service-foo-metadata-dch5bfg2hb
+  name: service-foo-metadata-8m49mh9tgd
 ---
 apiVersion: v1
 kind: Service
@@ -43,6 +43,6 @@ spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: service-foo-metadata-dch5bfg2hb
-        image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-foo:develop.795889246204e064140418aa9b39050a8bcf9c45
+            name: service-foo-metadata-8m49mh9tgd
+        image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-foo:develop.894f8810d3da91317dfca27feaac3855bc212924
         name: service-foo
