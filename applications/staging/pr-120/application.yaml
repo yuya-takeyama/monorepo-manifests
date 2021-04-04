@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pr-120
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: pr-120
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: staging/pr-120
+    repoURL: https://github.com/yuya-takeyama/monorepo-manifests.git
+    targetRevision: master
+  syncPolicy:
+    automated: { prune: true, selfHeal: true }
+    syncOptions:
+    - CreateNamespace=true
