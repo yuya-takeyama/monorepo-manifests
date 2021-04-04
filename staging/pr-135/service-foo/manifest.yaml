@@ -1,0 +1,48 @@
+apiVersion: v1
+data:
+  GITHUB_SHA: 66798d1478df93e0c25e5150bcbcf28f86bb4da6
+  NAMESPACE: pr-135
+  OVERLAY: staging
+  SERVICE_NAME: service-foo
+kind: ConfigMap
+metadata:
+  name: service-foo-metadata-98gd4kgdhk
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-foo
+  name: service-foo
+spec:
+  ports:
+  - name: 80-4567
+    port: 80
+    protocol: TCP
+    targetPort: 4567
+  selector:
+    app: service-foo
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service-foo
+  name: service-foo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-foo
+  template:
+    metadata:
+      labels:
+        app: service-foo
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: service-foo-metadata-98gd4kgdhk
+        image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-foo:pr-135.66798d1478df93e0c25e5150bcbcf28f86bb4da6
+        name: service-foo
