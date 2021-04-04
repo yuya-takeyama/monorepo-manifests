@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: 6295c1e5015e34b178c64961a5e8c1562311f70d
+  GITHUB_SHA: 0d2ad8cc9315c32690e0c203e00829663100513e
   NAMESPACE: pr-118
   OVERLAY: staging
   SERVICE_NAME: service-foo
 kind: ConfigMap
 metadata:
-  name: service-foo-metadata-92mc94hdf6
+  name: service-foo-metadata-ttkhtbd449
 ---
 apiVersion: v1
 kind: Service
@@ -43,6 +43,6 @@ spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: service-foo-metadata-92mc94hdf6
-        image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-foo:pr-118.6295c1e5015e34b178c64961a5e8c1562311f70d
+            name: service-foo-metadata-ttkhtbd449
+        image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-foo:pr-118.0d2ad8cc9315c32690e0c203e00829663100513e
         name: service-foo
