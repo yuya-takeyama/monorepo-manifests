@@ -1,12 +1,12 @@
 apiVersion: v1
 data:
-  GITHUB_SHA: b3ff882f960631be4eae3b0c4268ce432f906b9f
+  GITHUB_SHA: d5935ca51aae55b89b4b3dae0117ed066114cb4c
   NAMESPACE: pr-121
   OVERLAY: staging
   SERVICE_NAME: service-bar
 kind: ConfigMap
 metadata:
-  name: service-bar-metadata-8kbfmt8429
+  name: service-bar-metadata-hkftf9g6d9
 ---
 apiVersion: v1
 kind: Service
@@ -41,5 +41,5 @@ spec:
         app: service-bar
     spec:
       containers:
-      - image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-bar:pr-121.b3ff882f960631be4eae3b0c4268ce432f906b9f
+      - image: asia-northeast1-docker.pkg.dev/intense-hour-308116/monorepo/service-bar:pr-121.d5935ca51aae55b89b4b3dae0117ed066114cb4c
         name: service-bar
